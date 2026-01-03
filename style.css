@@ -1,0 +1,129 @@
+:root {
+  --yellow: hsl(47, 88%, 63%);
+  --white: hsl(0, 0%, 100%);
+  --gray-500: hsl(0, 0%, 42%);
+  --gray-950: hsl(0, 0%, 7%);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Figtree', sans-serif;
+  background-color: var(--yellow);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: var(--gray-950);
+}
+
+.card {
+  background-color: var(--white);
+  border: 1px solid var(--gray-950);
+  border-radius: 20px;
+  box-shadow: 8px 8px 0 var(--gray-950);
+  padding: clamp(16px, calc(5vw + 8px), 24px); /* Scales padding responsively */
+  max-width: min(90vw, clamp(327px, 50vw, 384px)); /* Adaptive max-width */
+  margin: clamp(16px, 5vw, 24px);
+}
+
+.illustration {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: clamp(16px, 3vw, 24px);
+}
+
+.tag {
+  display: inline-block;
+  background-color: var(--yellow);
+  font-size: clamp(12px, calc(0.875vw + 8px), 14px);
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+.date {
+  font-size: clamp(12px, calc(0.875vw + 8px), 14px);
+  font-weight: 600;
+  color: var(--gray-500);
+  margin: 0 0 12px;
+}
+
+.title {
+  font-size: clamp(18px, calc(1.5vw + 12px), 24px);
+  font-weight: 800;
+  margin: 0 0 12px;
+}
+
+.title a {
+  color: var(--gray-950);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.title a:hover,
+.title a:focus {
+  color: var(--yellow);
+  outline: none;
+}
+
+.description {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--gray-500);
+  line-height: 1.5;
+  margin: 0 0 clamp(16px, 3vw, 24px);
+}
+
+.author {
+  display: flex;
+  align-items: center;
+}
+
+.author-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  margin-right: 12px;
+}
+
+.author-name {
+  font-size: clamp(12px, calc(0.875vw + 8px), 14px);
+  font-weight: 800;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  margin-top: auto;
+  padding-bottom: 16px;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.attribution a:hover,
+.attribution a:focus {
+  color: var(--yellow);
+  outline: none;
+}
+
+/* Disable transitions for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .title a,
+  .attribution a {
+    transition: none;
+  }
+}
+
+/* Responsive adjustments for larger screens */
+@media (min-width: 48rem) {
+  .card {
+    padding: 24px;
+  }
+}
